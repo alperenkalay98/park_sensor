@@ -1,0 +1,22 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\startup.o"
+".\objects\main.o"
+".\objects\lcd_init.o"
+".\objects\initial_screen.o"
+".\objects\sw_inits.o"
+".\objects\motor_init.o"
+".\objects\adc_init.o"
+".\objects\dist_init.o"
+".\objects\sw1_detect.o"
+".\objects\dist_track.o"
+".\objects\comparison.o"
+".\objects\digit_changes.o"
+".\objects\new_convrts.o"
+".\objects\mode_cursors.o"
+".\objects\prog_bar_curs.o"
+".\objects\modify_prog_bar.o"
+".\objects\delayer.o"
+".\objects\sw2_detect.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\parksensor.map" -o .\Objects\parksensor.axf

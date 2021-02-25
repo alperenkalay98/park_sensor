@@ -1,0 +1,456 @@
+Component: ARM Compiler 6.14.1 Tool: armlink [5db06d00]
+
+==============================================================================
+
+Section Cross References
+
+    startup.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers to startup.o(STACK) for StackMem
+    startup.o(RESET) refers to main.o(main) for __main
+    startup.o(RESET) refers to motor_init.o(ports) for My_Timer0A_Handler
+    startup.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(.text) refers to startup.o(HEAP) for HeapMem
+    startup.o(.text) refers to startup.o(STACK) for StackMem
+    main.o(main) refers to lcd_init.o(subroutines) for lcd_init
+    main.o(main) refers to initial_screen.o(subroutine) for init_screen
+    main.o(main) refers to adc_init.o(routines) for adc_init
+    main.o(main) refers to dist_init.o(routines) for dist_init
+    main.o(main) refers to sw_inits.o(subrouintes) for sw_inits
+    main.o(main) refers to motor_init.o(ports) for motor_init
+    main.o(main) refers to dist_track.o(subroutines) for dist_tr
+    main.o(main) refers to sw1_detect.o(subroutines) for SW1_detect
+    main.o(main) refers to comparison.o(subroutines) for comparison
+    initial_screen.o(subroutine) refers to lcd_init.o(subroutines) for send48x48
+    initial_screen.o(subroutine) refers to initial_screen.o(sdata) for normal
+    sw1_detect.o(subroutines) refers to lcd_init.o(subroutines) for send48x48
+    sw1_detect.o(subroutines) refers to delayer.o(subroutines) for delayer
+    sw1_detect.o(subroutines) refers to new_convrts.o(routines) for new_conv
+    sw1_detect.o(subroutines) refers to digit_changes.o(subroutines) for thre_chng
+    sw1_detect.o(subroutines) refers to sw1_detect.o(sdata) for thres_scr
+    dist_track.o(subroutines) refers to new_convrts.o(routines) for new_conv2
+    dist_track.o(subroutines) refers to digit_changes.o(subroutines) for measur_chng
+    comparison.o(subroutines) refers to mode_cursors.o(subroutines) for set_cursor
+    comparison.o(subroutines) refers to delayer.o(subroutines) for delayer
+    comparison.o(subroutines) refers to sw2_detect.o(subroutines) for SW2_detect
+    comparison.o(subroutines) refers to modify_prog_bar.o(subroutines) for modify_sim
+    comparison.o(subroutines) refers to comparison.o(sdata) for brake_disp
+    digit_changes.o(subroutines) refers to lcd_init.o(subroutines) for m_digit1_chng
+    digit_changes.o(subroutines) refers to digit_changes.o(sdata) for num0
+    mode_cursors.o(subroutines) refers to lcd_init.o(subroutines) for byte_send
+    prog_bar_curs.o(subroutines) refers to lcd_init.o(subroutines) for byte_send
+    modify_prog_bar.o(subroutines) refers to prog_bar_curs.o(subroutines) for thresh_cursor
+    modify_prog_bar.o(subroutines) refers to delayer.o(subroutines) for delayer
+    modify_prog_bar.o(subroutines) refers to modify_prog_bar.o(sdata) for thresh
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup.o(HEAP), (0 bytes).
+    Removing startup.o(.text), (48 bytes).
+    Removing prog_bar_curs.o(sdata), (75 bytes).
+
+3 unused section(s) (total 123 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    Startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    adc_init.s                               0x00000000   Number         0  adc_init.o ABSOLUTE
+    comparison.s                             0x00000000   Number         0  comparison.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    delayer.s                                0x00000000   Number         0  delayer.o ABSOLUTE
+    digit_changes.s                          0x00000000   Number         0  digit_changes.o ABSOLUTE
+    dist_init.s                              0x00000000   Number         0  dist_init.o ABSOLUTE
+    dist_track.s                             0x00000000   Number         0  dist_track.o ABSOLUTE
+    initial_screen.s                         0x00000000   Number         0  initial_screen.o ABSOLUTE
+    lcd_init.s                               0x00000000   Number         0  lcd_init.o ABSOLUTE
+    main.s                                   0x00000000   Number         0  main.o ABSOLUTE
+    mode_cursors.s                           0x00000000   Number         0  mode_cursors.o ABSOLUTE
+    modify_prog_bar.s                        0x00000000   Number         0  modify_prog_bar.o ABSOLUTE
+    motor_init.s                             0x00000000   Number         0  motor_init.o ABSOLUTE
+    new_convrts.s                            0x00000000   Number         0  new_convrts.o ABSOLUTE
+    prog_bar_curs.s                          0x00000000   Number         0  prog_bar_curs.o ABSOLUTE
+    sw1_detect.s                             0x00000000   Number         0  sw1_detect.o ABSOLUTE
+    sw2_detect.s                             0x00000000   Number         0  sw2_detect.o ABSOLUTE
+    sw_inits.s                               0x00000000   Number         0  sw_inits.o ABSOLUTE
+    RESET                                    0x00000000   Section      652  startup.o(RESET)
+    $v0                                      0x0000026c   Number         0  startup.o(RESET)
+    .text                                    0x0000028c   Section        0  heapauxi.o(.text)
+    $v0                                      0x00000294   Number         0  main.o(main)
+    main                                     0x00000294   Section       44  main.o(main)
+    $v0                                      0x000002c0   Number         0  motor_init.o(ports)
+    ports                                    0x000002c0   Section      356  motor_init.o(ports)
+    $v0                                      0x00000424   Number         0  adc_init.o(routines)
+    routines                                 0x00000424   Section      184  adc_init.o(routines)
+    $v0                                      0x000004dc   Number         0  dist_init.o(routines)
+    routines                                 0x000004dc   Section      228  dist_init.o(routines)
+    $v0                                      0x000005c0   Number         0  new_convrts.o(routines)
+    routines                                 0x000005c0   Section      196  new_convrts.o(routines)
+    normal                                   0x00000684   Data           5  initial_screen.o(sdata)
+    sdata                                    0x00000684   Section      504  initial_screen.o(sdata)
+    thres_scr                                0x0000087c   Data           5  sw1_detect.o(sdata)
+    sdata                                    0x0000087c   Section      504  sw1_detect.o(sdata)
+    brake_disp                               0x00000a74   Data           5  comparison.o(sdata)
+    sdata                                    0x00000a74   Section      195  comparison.o(sdata)
+    ret_norm                                 0x00000ab5   Data           5  comparison.o(sdata)
+    disp_init                                0x00000af6   Data           5  comparison.o(sdata)
+    num0                                     0x00000b38   Data           5  digit_changes.o(sdata)
+    sdata                                    0x00000b38   Section       50  digit_changes.o(sdata)
+    num1                                     0x00000b3d   Data           5  digit_changes.o(sdata)
+    num2                                     0x00000b42   Data           5  digit_changes.o(sdata)
+    num3                                     0x00000b47   Data           5  digit_changes.o(sdata)
+    num4                                     0x00000b4c   Data           5  digit_changes.o(sdata)
+    num5                                     0x00000b51   Data           5  digit_changes.o(sdata)
+    num6                                     0x00000b56   Data           5  digit_changes.o(sdata)
+    num7                                     0x00000b5b   Data           5  digit_changes.o(sdata)
+    num8                                     0x00000b60   Data           5  digit_changes.o(sdata)
+    num9                                     0x00000b65   Data           5  digit_changes.o(sdata)
+    ds10                                     0x00000b6c   Data           5  modify_prog_bar.o(sdata)
+    sdata                                    0x00000b6c   Section      280  modify_prog_bar.o(sdata)
+    ds9                                      0x00000b9e   Data           5  modify_prog_bar.o(sdata)
+    ds8                                      0x00000bcb   Data           5  modify_prog_bar.o(sdata)
+    ds7                                      0x00000bf3   Data           5  modify_prog_bar.o(sdata)
+    ds6                                      0x00000c16   Data           5  modify_prog_bar.o(sdata)
+    ds5                                      0x00000c34   Data           5  modify_prog_bar.o(sdata)
+    ds4                                      0x00000c4d   Data           5  modify_prog_bar.o(sdata)
+    ds3                                      0x00000c61   Data           5  modify_prog_bar.o(sdata)
+    ds2                                      0x00000c70   Data           5  modify_prog_bar.o(sdata)
+    ds1                                      0x00000c7a   Data           5  modify_prog_bar.o(sdata)
+    thresh                                   0x00000c7f   Data           5  modify_prog_bar.o(sdata)
+    $v0                                      0x00000c84   Number         0  sw_inits.o(subrouintes)
+    subrouintes                              0x00000c84   Section      168  sw_inits.o(subrouintes)
+    $v0                                      0x00000d2c   Number         0  initial_screen.o(subroutine)
+    subroutine                               0x00000d2c   Section       76  initial_screen.o(subroutine)
+    $v0                                      0x00000d78   Number         0  lcd_init.o(subroutines)
+    subroutines                              0x00000d78   Section      996  lcd_init.o(subroutines)
+    $v0                                      0x0000115c   Number         0  sw1_detect.o(subroutines)
+    subroutines                              0x0000115c   Section      216  sw1_detect.o(subroutines)
+    $v0                                      0x00001234   Number         0  dist_track.o(subroutines)
+    subroutines                              0x00001234   Section      144  dist_track.o(subroutines)
+    $v0                                      0x000012c4   Number         0  comparison.o(subroutines)
+    subroutines                              0x000012c4   Section      172  comparison.o(subroutines)
+    $v0                                      0x00001370   Number         0  digit_changes.o(subroutines)
+    subroutines                              0x00001370   Section      664  digit_changes.o(subroutines)
+    $v0                                      0x00001608   Number         0  mode_cursors.o(subroutines)
+    subroutines                              0x00001608   Section      176  mode_cursors.o(subroutines)
+    $v0                                      0x000016b8   Number         0  prog_bar_curs.o(subroutines)
+    subroutines                              0x000016b8   Section     1040  prog_bar_curs.o(subroutines)
+    $v0                                      0x00001ac8   Number         0  modify_prog_bar.o(subroutines)
+    subroutines                              0x00001ac8   Section      196  modify_prog_bar.o(subroutines)
+    $v0                                      0x00001b8c   Number         0  delayer.o(subroutines)
+    subroutines                              0x00001b8c   Section       18  delayer.o(subroutines)
+    $v0                                      0x00001ba0   Number         0  sw2_detect.o(subroutines)
+    subroutines                              0x00001ba0   Section       48  sw2_detect.o(subroutines)
+    StackMem                                 0x20000000   Data           0  startup.o(STACK)
+    STACK                                    0x20000000   Section     1024  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$STANDARDLIB$REQ8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x00000000   Data           0  startup.o(RESET)
+    Reset_Handler                            0x0000026d   Thumb Code     0  startup.o(RESET)
+    NMI_Handler                              0x00000271   Thumb Code     2  startup.o(RESET)
+    HardFault_Handler                        0x00000273   Thumb Code     2  startup.o(RESET)
+    MemManage_Handler                        0x00000275   Thumb Code     2  startup.o(RESET)
+    BusFault_Handler                         0x00000277   Thumb Code     2  startup.o(RESET)
+    UsageFault_Handler                       0x00000279   Thumb Code     2  startup.o(RESET)
+    SVC_Handler                              0x0000027b   Thumb Code     2  startup.o(RESET)
+    DebugMon_Handler                         0x0000027d   Thumb Code     2  startup.o(RESET)
+    PendSV_Handler                           0x0000027f   Thumb Code     2  startup.o(RESET)
+    SysTick_Handler                          0x00000281   Thumb Code     2  startup.o(RESET)
+    Timer0A_Handler                          0x00000283   Thumb Code     4  startup.o(RESET)
+    GPIOPortF_Handler                        0x00000287   Thumb Code     2  startup.o(RESET)
+    ADC0Seq0_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    ADC0Seq1_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    ADC0Seq2_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    ADC0Seq3_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    ADC1Seq0_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    ADC1Seq1_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    ADC1Seq2_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    ADC1Seq3_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    CAN0_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    CAN1_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    CAN2_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    Comp0_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    Comp1_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    Comp2_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    Ethernet_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    ExtBus_Handler                           0x00000289   Thumb Code     0  startup.o(RESET)
+    FPU_Handler                              0x00000289   Thumb Code     0  startup.o(RESET)
+    Fan0_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    FlashCtl_Handler                         0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortA_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortB_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortC_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortD_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortE_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortG_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortH_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortJ_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortK_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortL_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortM_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortN_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortP1_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortP2_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortP3_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortP4_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortP5_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortP6_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortP7_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortP_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ1_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ2_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ3_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ4_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ5_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ6_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ7_Handler                       0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortR_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    GPIOPortS_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    Hibernate_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    I2C0_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    I2C1_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    I2C2_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    I2C3_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    I2C4_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    I2C5_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    I2S0_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    LPC0_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    PECI0_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM0Fault_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM0Generator0_Handler                   0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM0Generator1_Handler                   0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM0Generator2_Handler                   0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM0Generator3_Handler                   0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM1Fault_Handler                        0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM1Generator0_Handler                   0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM1Generator1_Handler                   0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM1Generator2_Handler                   0x00000289   Thumb Code     0  startup.o(RESET)
+    PWM1Generator3_Handler                   0x00000289   Thumb Code     0  startup.o(RESET)
+    Quadrature0_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    Quadrature1_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    Quadrature2_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    SSI0_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    SSI1_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    SSI2_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    SSI3_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    SysCtl_Handler                           0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer0B_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer1A_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer1B_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer2A_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer2B_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer3A_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer3B_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer4A_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer4B_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer5A_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    Timer5B_Handler                          0x00000289   Thumb Code     0  startup.o(RESET)
+    UART0_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    UART1_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    UART2_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    UART3_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    UART4_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    UART5_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    UART6_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    UART7_Handler                            0x00000289   Thumb Code     0  startup.o(RESET)
+    USB0_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    WDT_Handler                              0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer0A_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer0B_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer1A_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer1B_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer2A_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer2B_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer3A_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer3B_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer4A_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer4B_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer5A_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    WideTimer5B_Handler                      0x00000289   Thumb Code     0  startup.o(RESET)
+    uDMA_Error                               0x00000289   Thumb Code     0  startup.o(RESET)
+    uDMA_Handler                             0x00000289   Thumb Code     0  startup.o(RESET)
+    __use_two_region_memory                  0x0000028d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0000028f   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x00000291   Thumb Code     2  heapauxi.o(.text)
+    __main                                   0x00000295   Thumb Code     0  main.o(main)
+    motor_init                               0x000002c1   Thumb Code     0  motor_init.o(ports)
+    My_Timer0A_Handler                       0x0000036d   Thumb Code     0  motor_init.o(ports)
+    adc_init                                 0x00000425   Thumb Code   140  adc_init.o(routines)
+    dist_init                                0x000004dd   Thumb Code     0  dist_init.o(routines)
+    new_conv                                 0x000005c1   Thumb Code    94  new_convrts.o(routines)
+    new_conv2                                0x0000061f   Thumb Code     0  new_convrts.o(routines)
+    sw_inits                                 0x00000c85   Thumb Code     0  sw_inits.o(subrouintes)
+    init_screen                              0x00000d2d   Thumb Code     0  initial_screen.o(subroutine)
+    lcd_init                                 0x00000d79   Thumb Code     0  lcd_init.o(subroutines)
+    byte_send                                0x00000e67   Thumb Code     0  lcd_init.o(subroutines)
+    send48x48                                0x00000e7b   Thumb Code     0  lcd_init.o(subroutines)
+    clear_screen                             0x00000ecf   Thumb Code     0  lcd_init.o(subroutines)
+    m_digit1_chng                            0x00000f27   Thumb Code     0  lcd_init.o(subroutines)
+    m_digit2_chng                            0x00000f7b   Thumb Code     0  lcd_init.o(subroutines)
+    m_digit3_chng                            0x00000fcf   Thumb Code     0  lcd_init.o(subroutines)
+    t_digit1_chng                            0x00001023   Thumb Code     0  lcd_init.o(subroutines)
+    t_digit2_chng                            0x00001077   Thumb Code     0  lcd_init.o(subroutines)
+    t_digit3_chng                            0x000010cb   Thumb Code     0  lcd_init.o(subroutines)
+    SW1_detect                               0x0000115d   Thumb Code     0  sw1_detect.o(subroutines)
+    dist_tr                                  0x00001235   Thumb Code     0  dist_track.o(subroutines)
+    comparison                               0x000012c5   Thumb Code     0  comparison.o(subroutines)
+    normal_mode                              0x00001321   Thumb Code     0  comparison.o(subroutines)
+    measur_chng                              0x00001371   Thumb Code     0  digit_changes.o(subroutines)
+    thre_chng                                0x000014a5   Thumb Code     0  digit_changes.o(subroutines)
+    set_cursor                               0x00001609   Thumb Code     0  mode_cursors.o(subroutines)
+    set_cursor2                              0x0000165d   Thumb Code     0  mode_cursors.o(subroutines)
+    c0and999                                 0x000016b9   Thumb Code     0  prog_bar_curs.o(subroutines)
+    c100and999                               0x0000170d   Thumb Code     0  prog_bar_curs.o(subroutines)
+    c200and999                               0x00001761   Thumb Code     0  prog_bar_curs.o(subroutines)
+    c300and999                               0x000017b5   Thumb Code     0  prog_bar_curs.o(subroutines)
+    c400and999                               0x00001809   Thumb Code     0  prog_bar_curs.o(subroutines)
+    c500and999                               0x0000185d   Thumb Code     0  prog_bar_curs.o(subroutines)
+    c600and999                               0x000018b1   Thumb Code     0  prog_bar_curs.o(subroutines)
+    c700and999                               0x00001905   Thumb Code     0  prog_bar_curs.o(subroutines)
+    c800and999                               0x00001959   Thumb Code     0  prog_bar_curs.o(subroutines)
+    c900and999                               0x000019ad   Thumb Code     0  prog_bar_curs.o(subroutines)
+    thresh_cursor                            0x00001a01   Thumb Code     0  prog_bar_curs.o(subroutines)
+    modify_sim                               0x00001ac9   Thumb Code     0  modify_prog_bar.o(subroutines)
+    delayer                                  0x00001b8d   Thumb Code     0  delayer.o(subroutines)
+    SW2_detect                               0x00001ba1   Thumb Code     0  sw2_detect.o(subroutines)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0000026d
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00001fd0, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001bd0, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x0000028c   Code   RO            3  * RESET               startup.o
+    0x0000028c   0x0000028c   0x00000006   Code   RO           85    .text               c_w.l(heapauxi.o)
+    0x00000292   0x00000292   0x00000002   PAD
+    0x00000294   0x00000294   0x0000002c   Code   RO           12    main                main.o
+    0x000002c0   0x000002c0   0x00000164   Code   RO           27    ports               motor_init.o
+    0x00000424   0x00000424   0x000000b8   Code   RO           30    routines            adc_init.o
+    0x000004dc   0x000004dc   0x000000e4   Code   RO           34    routines            dist_init.o
+    0x000005c0   0x000005c0   0x000000c4   Code   RO           58    routines            new_convrts.o
+    0x00000684   0x00000684   0x000001f8   Code   RO           18    sdata               initial_screen.o
+    0x0000087c   0x0000087c   0x000001f8   Code   RO           37    sdata               sw1_detect.o
+    0x00000a74   0x00000a74   0x000000c3   Code   RO           46    sdata               comparison.o
+    0x00000b37   0x00000b37   0x00000001   PAD
+    0x00000b38   0x00000b38   0x00000032   Code   RO           52    sdata               digit_changes.o
+    0x00000b6a   0x00000b6a   0x00000002   PAD
+    0x00000b6c   0x00000b6c   0x00000118   Code   RO           71    sdata               modify_prog_bar.o
+    0x00000c84   0x00000c84   0x000000a8   Code   RO           24    subrouintes         sw_inits.o
+    0x00000d2c   0x00000d2c   0x0000004c   Code   RO           19    subroutine          initial_screen.o
+    0x00000d78   0x00000d78   0x000003e4   Code   RO           15    subroutines         lcd_init.o
+    0x0000115c   0x0000115c   0x000000d8   Code   RO           38    subroutines         sw1_detect.o
+    0x00001234   0x00001234   0x00000090   Code   RO           43    subroutines         dist_track.o
+    0x000012c4   0x000012c4   0x000000ac   Code   RO           47    subroutines         comparison.o
+    0x00001370   0x00001370   0x00000298   Code   RO           53    subroutines         digit_changes.o
+    0x00001608   0x00001608   0x000000b0   Code   RO           62    subroutines         mode_cursors.o
+    0x000016b8   0x000016b8   0x00000410   Code   RO           66    subroutines         prog_bar_curs.o
+    0x00001ac8   0x00001ac8   0x000000c4   Code   RO           72    subroutines         modify_prog_bar.o
+    0x00001b8c   0x00001b8c   0x00000012   Code   RO           77    subroutines         delayer.o
+    0x00001b9e   0x00001b9e   0x00000002   PAD
+    0x00001ba0   0x00001ba0   0x00000030   Code   RO           80    subroutines         sw2_detect.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00001bd0, Size: 0x00000400, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00001bd0   0x00000400   Data   RW            1    STACK               startup.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000400, Load base: 0x00001fd0, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       184         44          0          0          0        388   adc_init.o
+       367        227          0          0          0        424   comparison.o
+        18          0          0          0          0        200   delayer.o
+       714         98          0          0          0        672   digit_changes.o
+       228         54          0          0          0        264   dist_init.o
+       144         20          0          0          0        244   dist_track.o
+       580        518          0          0          0        408   initial_screen.o
+       996         62          0          0          0        524   lcd_init.o
+        44          0          0          0          0        200   main.o
+       176          8          0          0          0        260   mode_cursors.o
+       476        328          0          0          0        448   modify_prog_bar.o
+       356         72          0          0          0        316   motor_init.o
+       196          8          0          0          0        428   new_convrts.o
+      1040         14          0          0          0        564   prog_bar_curs.o
+       652        622          0       1024          0        848   startup.o
+       720        534          0          0          0        440   sw1_detect.o
+        48         14          0          0          0        212   sw2_detect.o
+       168         56          0          0          0        240   sw_inits.o
+
+    ----------------------------------------------------------------------
+      7112       2682          0       1024          0       7080   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         5          3          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         6          0          0          0          0        152   heapauxi.o
+
+    ----------------------------------------------------------------------
+         8          0          0          0          0        152   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+         6          0          0          0          0        152   c_w.l
+
+    ----------------------------------------------------------------------
+         8          0          0          0          0        152   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      7120       2682          0       1024          0       7032   Grand Totals
+      7120       2682          0       1024          0       7032   ELF Image Totals
+      7120       2682          0       1024          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 7120 (   6.95kB)
+    Total RW  Size (RW Data + ZI Data)              1024 (   1.00kB)
+    Total ROM Size (Code + RO Data + RW Data)       8144 (   7.95kB)
+
+==============================================================================
+
